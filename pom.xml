@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>server</artifactId>
+<!--   Если у вас есть <packaging>war</packaging> в <project> элементе, Maven соберет JAR в формате WAR (Web Application Archive), который обычно используется для клиентских веб-приложений. Если <packaging>jar</packaging> используется, Maven.colorbar ожидает пользовательского JAR-архива.-->
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>server Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!--    библиотеки для работы с НС-->
+    <dependency>
+      <groupId>ai.djl</groupId>
+      <artifactId>api</artifactId>
+      <version>0.8.0</version>
+    </dependency>
+    <dependency>
+      <groupId>ai.djl</groupId>
+      <artifactId>repository</artifactId>
+      <version>0.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>ai.djl.pytorch</groupId>
+      <artifactId>pytorch-model-zoo</artifactId>
+      <version>0.8.0</version>
+    </dependency>
+    <dependency>
+      <groupId>ai.djl.pytorch</groupId>
+      <artifactId>pytorch-native-cpu</artifactId>
+      <classifier>osx-x86_64</classifier>
+      <version>1.6.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <!--    для работы с python
+    https://www.jython.org/index-->
+    <dependency>
+      <groupId>org.python</groupId>
+      <artifactId>jython-slim</artifactId>
+      <version>2.7.3</version>
+    </dependency>
+    <!--    servlets-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+    </dependency>
+    <!--    для работы с загрузкой файлов-->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+    <!--    онтология-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.hp.hpl.jena</groupId>-->
+    <!--      <artifactId>jena</artifactId>-->
+    <!--      <version>2.6.4</version>-->
+    <!--    </dependency>-->
+    <dependency>
+      <groupId>com.hp.hpl.jena</groupId>
+      <artifactId>arq</artifactId>
+      <version>2.8.8</version>
+    </dependency>
+    <!--    не обязательно для онтологии-->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.17.2</version>
+    </dependency>
+    <!-- gson-->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+<!--   клонирование репозитория гит -->
+    <dependency>
+      <groupId>org.eclipse.jgit</groupId>
+      <artifactId>org.eclipse.jgit</artifactId>
+      <version>5.13.0.202109080827-r</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>server</finalName>
+  </build>
+</project>
